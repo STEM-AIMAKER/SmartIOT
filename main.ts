@@ -1,5 +1,5 @@
 //% weight=10 color=#1E90FF icon="\uf136" block="HANSHIN: IAQ & IOT"
-namespace HANSHIN_IOT {
+namespace HANSHIN_IAQ_IOT {
     let buffer = ""
 
  /**
