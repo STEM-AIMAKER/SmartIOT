@@ -32,26 +32,50 @@ namespace HANSHIN_IAQ_IOT {
         
     //% blockId=raiseCurtain block="Raise Curtain |index=%index"
     export function raiseCurtain(index: CurtainIndex) : void {
+        serial.writeString("AT+CIPMODE=1") 
+        basic.pause(200)
+        serial.writeString("AT+CIPSEND")
+        basic.pause(200)
         let ctCmd = "ct,0," + index
         serial.writeString(ctCmd)
+        basic.pause(200)
+        serial.writeString("+++")
     }
     
     //% blockId=lowCurtain block="Low Curtain |index=%index"
     export function lowCurtain(index: CurtainIndex) : void {
+        serial.writeString("AT+CIPMODE=1") 
+        basic.pause(200)
+        serial.writeString("AT+CIPSEND")
+        basic.pause(200)
         let ctCmd = "ct,1," + index
         serial.writeString(ctCmd)
+        basic.pause(200)
+        serial.writeString("+++")
     }
         
     //% blockId=turnOffIO block="Turn off io, |io Index=%ioIndex"
     export function turnOffIO(ioIndex: string): void {
+        serial.writeString("AT+CIPMODE=1") 
+        basic.pause(200)
+        serial.writeString("AT+CIPSEND")
+        basic.pause(200)
         let ioCmd = "io,0," + ioIndex
         serial.writeString(ioCmd)
+        basic.pause(200)
+        serial.writeString("+++")
     }
     
     //% blockId=turnOnIO block="Turn on io, |io Index=%ioIndex"
     export function turnOnIO(ioIndex: string): void {
+        serial.writeString("AT+CIPMODE=1")
+        basic.pause(200)
+        serial.writeString("AT+CIPSEND")
+        basic.pause(200)
         let ioCmd = "io,1," + ioIndex
         serial.writeString(ioCmd)
+        basic.pause(200)
+        serial.writeString("+++")
     }
 
     //% blockId=connectIOTServer block="Connect to IOT Server, |ip=%ip"
@@ -59,9 +83,7 @@ namespace HANSHIN_IAQ_IOT {
         let connectCmd = "AT+CIPSTART=\"TCP\",\"" + ip +"\",5566"
         serial.writeString(connectCmd)
         basic.pause(2000)
-        serial.writeString("AT+CIPMODE=1")
-        basic.pause(500)
-        serial.writeString("AT+CIPSEND")
+        
     }  
 
     //% blockId=setWifiInfo block="Connect to WIFI, |SSID=%name Password=%password at serial port |TX = %Tx RX=%Rx"
