@@ -58,9 +58,9 @@ namespace HANSHIN_IAQ_IOT {
     export function connectIOTServer(ip: string): void {
         let connectCmd = "AT+CIPSTART=\"TCP\",\"" + ip +"\",5566"
         serial.writeString(connectCmd)
-        basic.pause(200)
+        basic.pause(2000)
         serial.writeString("AT+CIPMODE=1")
-        basic.pause(200)
+        basic.pause(500)
         serial.writeString("AT+CIPSEND")
     }  
 
