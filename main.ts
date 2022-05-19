@@ -7,7 +7,7 @@ namespace HANSHIN_IAQ_IOT {
  */
 // weight=10 color=#1E90FF icon="\uf136" block="HANSHIN: IAQ & IOT"
 
-	enum TemperatureValue {
+export enum TemperatureValue {
 	  //% block=16
 	  T16 = 16,
 	  //% block=17
