@@ -95,13 +95,15 @@ namespace HANSHIN_IAQ_IOT {
 	//% blockId=changeAirConditionerTemperature block="Change air conditioner |index=%index to |temperature=%temperature"
 	export function changeAirConditionerTemperature(index: number, temperature: TemperatureValue ): void {
 		serial.writeString("AT+CIPMODE=1") 
-        basic.pause(200)
-        serial.writeString("AT+CIPSEND")
-        basic.pause(200)
-        let ioCmd = "at," + (int)temperature + "," + index
-        serial.writeString(ioCmd)
-        basic.pause(200)
-        serial.writeString("+++")
+        	basic.pause(200)
+        	serial.writeString("AT+CIPSEND")
+        	basic.pause(200)
+		let indexString = "," + index
+        	let ioCmd = "at," + (int)temperature
+		ioCmd += indexString
+        	serial.writeString(ioCmd)
+        	basic.pause(200)
+        	serial.writeString("+++")
 	}
     
 	//% blockId=turnOffAirConditioner block="Turn off air conditioner , |index=%index"
