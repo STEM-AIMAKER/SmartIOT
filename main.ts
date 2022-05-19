@@ -92,7 +92,7 @@ export enum TemperatureValue {
         serial.writeString("+++")
     }
 	
-	//% blockId=changeAirConditionerTemperature block="Change air conditioner |index=%index to |temperature=%temperature"
+	//% blockId=changeAirConditionerTemperature block="Change air conditioner |index=%index temperature |to=%temperature ℃"
 	//% temperature.fieldEditor="gridpicker" temperature.fieldOptions.columns=4
 	export function changeAirConditionerTemperature(index: number, temperature: TemperatureValue ): void {
 		serial.writeString("AT+CIPMODE=1")
