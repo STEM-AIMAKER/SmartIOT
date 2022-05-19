@@ -93,6 +93,7 @@ namespace HANSHIN_IAQ_IOT {
     }
 	
 	//% blockId=changeAirConditionerTemperature block="Change air conditioner |index=%index to |temperature=%temperature"
+	//% temperature.fieldEditor="gridpicker" temperature.fieldOptions.columns=4
 	export function changeAirConditionerTemperature(index: number, temperature: TemperatureValue ): void {
 		serial.writeString("AT+CIPMODE=1")
 		basic.pause(200)
